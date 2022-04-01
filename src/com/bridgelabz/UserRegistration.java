@@ -69,12 +69,27 @@ public class UserRegistration {
         }
     }
 
-        public static void main(String[] args) {
+    public void password() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter password is: ");
+        String pass = sc.nextLine();
+        String regexFname ="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).{8,}$";
+
+        if (pass.matches(regexFname) == true) {
+            System.out.println("The password " + pass + " is valid.");
+        } else {
+            System.out.println("The password " + pass + " is invalid.");
+        }
+    }
+
+
+    public static void main(String[] args) {
             System.out.println("Welcome to the user registration problem");
             UserRegistration regex = new UserRegistration();
             regex.firstName();
             regex.lastName();
             regex.eMail();
             regex.phoneNo();
+            regex.password();
         }
 }
