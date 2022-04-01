@@ -43,10 +43,24 @@ public class UserRegistration {
         }
     }
 
+    public void eMail() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter eMail is: ");
+        String email = sc.nextLine();
+        String regexFname = "^[A-Za-z0-9]+([._+-][A-Za-z0-9]+)*@[A-Za-z0-9]+.[A-Za-z]{2,4}([.][A-Za-z]{2})*$";
+
+        if (email.matches(regexFname) == true) {
+            System.out.println("The eMail " + email + " is valid.");
+        } else {
+            System.out.println("The eMail " + email + " is invalid.");
+        }
+    }
+
         public static void main(String[] args) {
             System.out.println("Welcome to the user registration problem");
             UserRegistration regex = new UserRegistration();
             regex.firstName();
             regex.lastName();
+            regex.eMail();
         }
 }
