@@ -56,11 +56,25 @@ public class UserRegistration {
         }
     }
 
+    public void phoneNo() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Ph. number is: ");
+        String phnum = sc.nextLine();
+        String regexFname = "91?[0-9]{10}";
+
+        if (phnum.matches(regexFname) == true) {
+            System.out.println("The Ph. number " + phnum + " is valid.");
+        } else {
+            System.out.println("The Ph. number " + phnum + " is invalid.");
+        }
+    }
+
         public static void main(String[] args) {
             System.out.println("Welcome to the user registration problem");
             UserRegistration regex = new UserRegistration();
             regex.firstName();
             regex.lastName();
             regex.eMail();
+            regex.phoneNo();
         }
 }
