@@ -1,0 +1,38 @@
+package com.bridgelabz;
+
+import java.util.Scanner;
+
+/**
+ * Program on User Registration Using Regex
+ *
+ * @author : Ashvini Kanojia
+ * @since : 01/04/2022
+ * */
+
+public class UserRegistration {
+// (?=.*[0-9]) # a digit must occur at least once
+        // (?=.*[a-z]) # a lower case letter must occur at least once
+        // (?=.*[A-Z]) # an upper case letter must occur at least once
+        // (?=.*[@#$%^&+=]) # a special character must occur at least once
+        // (?=\S+$) # no whitespace allowed in the entire string
+        // .{8,} # anything, at least eight places though
+
+        public void firstName() {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter First Name is: ");
+            String fname = sc.nextLine();
+            String regexFname = "^[A-Z]{1}[a-z]{2,}";
+
+            if (fname.matches(regexFname) == true) {
+                System.out.println("The first name " + fname + " is valid.");
+            } else {
+                System.out.println("The first name " + fname + " is invalid.");
+            }
+        }
+
+        public static void main(String[] args) {
+            System.out.println("Welcome to the user registration problem");
+            UserRegistration regex = new UserRegistration();
+            regex.firstName();
+        }
+}
