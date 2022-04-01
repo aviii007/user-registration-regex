@@ -30,9 +30,23 @@ public class UserRegistration {
             }
         }
 
+    public void lastName() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Last Name is: ");
+        String lname = sc.nextLine();
+        String regexFname = "^[A-Z]{1}[A-Za-z]{2,}$";
+
+        if (lname.matches(regexFname) == true) {
+            System.out.println("The last name " + lname + " is valid.");
+        } else {
+            System.out.println("The last name " + lname + " is invalid.");
+        }
+    }
+
         public static void main(String[] args) {
             System.out.println("Welcome to the user registration problem");
             UserRegistration regex = new UserRegistration();
             regex.firstName();
+            regex.lastName();
         }
 }
